@@ -1,0 +1,351 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+
+body {
+  background: url("../images/w&b.jpg") no-repeat center top fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* -----------------------------------Fonts & Colours--*/
+
+* {
+  font-size: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Exo 2", sans-serif;
+  margin: 2rem 0;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+h2 span {
+  padding: 1rem;
+  background: #f2f2f2;
+  font-size: 2rem;
+}
+
+/*----------------Navbar-------------- */
+
+#logo {
+  width: 70px;
+  height: 70px;
+}
+.qz-navbar {
+  background-color: #000;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 5rem;
+}
+.qz-navbar i {
+  font-size: 3rem;
+  color: #f2f2f2;
+}
+button i:hover {
+  transition: 1s;
+  color: #F2B90F;
+}
+
+/*------------ Game HUD & settings------------- */
+
+#gameDashboard {
+  margin-top: 9rem;
+}
+.qz-hud {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  background: #F2B90F;
+  background-clip: content-box;
+}
+.qz-hud h2 {
+  background-color: rgba(250, 250, 250, 0.6);
+  margin-top: 1rem;
+  padding-left: 0;
+  font-size: 2rem;
+}
+select {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0px;
+  width: 180px;
+  padding: 5px 0px 5px 10px;
+  border: 2px solid #011526;
+  border-radius: 5%;
+  height: 35px;
+  background: #F2B90F;
+}
+
+/----------Game live score & progressbar -----/
+
+#start,
+#start:active {
+  border: 2px solid #011526;
+  font-size: 2rem;
+  width: 15rem;
+  height: 4rem;
+  background-color: #F2B90F;
+  color: #000;
+}
+#start:hover,
+#start:focus {
+  animation: pulse 2s;
+  border-color: #F2B90F;
+  box-shadow: 0 0 3rem rgba(210, 29, 242, 0.4);
+}
+.progress-wraper {
+  max-width: 80%;
+  margin-left: 10%;
+  margin-bottom: 2rem;
+  height: 3rem;
+  border: 1px solid #000;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.qz-progress-bar {
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 500;
+  width: 0%;
+  background-color: #7957F2;
+}
+.hScore {
+  display: inline-block;
+}
+#score {
+  height: 7rem;
+  line-height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.2rem;
+  background-color: #F2B90F;
+  padding: 0.5rem;
+  border: 2px solid #011526;
+}
+#currentScore {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+#userName {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+}
+
+#highScore {
+  font-size: 2.4rem;
+}
+/------------------ Game Questions & Answers -----------/
+.answers-container {
+  display: flex;
+  padding-left: 0;
+  margin: 0 1rem 0 1rem;
+  border-radius: 1.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  border: 0.2rem solid #141A40;
+  background-color: #F2B90F;
+}
+
+.answers-container:hover {
+  box-shadow: 0 0.5em 0.5em -0.4em;
+  transform: translateY(-0.25em);
+}
+
+.answer-choice {
+  padding: 1rem 0rem 1rem 2rem;
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.answer-prefix {
+  display: flex;
+  border-radius: 1.2rem;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  background-color: #f2f2f2;
+  border-right: 0.2rem solid #011526;
+}
+#game {
+  padding: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+#question {
+  background: #7957F2;
+  padding: 1rem;
+  border: 2px solid #000;
+  border-radius: 0.5rem;
+}
+
+i,
+a {
+  color: #141A40;
+  font-size: 3rem;
+}
+
+/-------------------Modals-------------------/
+
+.qz-Modal--bg {
+  background: #F2B90F;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#playerModal label {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+#user {
+  font-family: "Exo 2", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #7957F2;
+  background-color: #011526;
+}
+
+.qz-Modal--content {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.qz-Modal--content p {
+  font-size: 2rem;
+  font-weight: 500;
+}
+#underline {
+  font-size: 2rem;
+  text-decoration: underline;
+}
+
+#submitName {
+  font-size: 2rem;
+  border: 1px solid #fff;
+  background-color: #011526;
+}
+
+#submitName:hover {
+  transition: 0.5s;
+  color: #7957F2;
+  border: 1px solid #7957F2;
+}
+
+button.close span {
+  color: #141A40;
+  font-weight: 800;
+  text-shadow: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 2.5rem;
+}
+
+button.close {
+  opacity: 1;
+  padding-top: 0.5rem;
+}
+
+button.close span:hover {
+  transition: 0.5s;
+  color: #8b0017;
+}
+button.close:focus {
+  outline: none;
+}
+
+/-------------------footer-------------------/
+
+.copy p {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #F2f2f2;
+}
+.mail i,
+.mail span {
+  color:#F2f2f2;
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.mail span:hover,
+.mail a:hover {
+  transition: 1s;
+  text-decoration: none;
+  color: #7957F2;
+}
+
+.GitHub i {
+  color: #F2f2f2;
+}
+
+.GitHub i:hover,
+.mail i:hover {
+  transition: 1.5s;
+  font-size: 4rem;
+  color: #7957F2;
+}
+
+/*------------ add and remove classes---------- */
+
+.hideBtn {
+  visibility: hidden;
+}
+
+.correct {
+  background-color: #47bd11;
+}
+
+.incorrect {
+  background-color: #8b0017;
+}
+.display {
+  display: none;
+}
+.hide {
+  visibility: hidden;
+}
+
+/------------------ Media Query ----------------/
+@media screen and (max-width: 350px) {
+  .col-12 {
+    padding: 0;
+  }
+  .progress-wraper {
+    max-width: 100%;
+    margin-left: 0;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+  #game {
+    padding: 0;
+    width: 100%;
+  }
+  #question {
+    margin: 1rem 0 1rem 0;
+    font-size: 2rem;
+  }
+  #qz-footer {
+    padding: 0.5rem;
+  }
+}
+@media screen and (min-width: 351px) {
+  .title span {
+    font-size: 3rem;
+    background-clip: content-box;
+  }
+}
