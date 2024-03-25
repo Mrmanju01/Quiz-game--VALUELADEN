@@ -25,7 +25,7 @@ const fanfare = document.querySelector('#fanfare');
 const noPoints = document.querySelector('#noPoints');
 
 
-// Bonus point will depend on the level of quiz difficulty the player will chose
+// Bonus point will depend on the level of quiz difficulty the player will choose
 let bonus;
 const startGame = () => {
     counterQuestion = 0;
@@ -54,7 +54,7 @@ const startGame = () => {
 };
 
 const getNextQuestion = () => {
-    //temprorary setting quiz after questions finish to refresh page so game starts again
+    //temporary setting quiz after questions finish to refresh page so game starts again
     if (availableQuestions.length === 0) {
         question.innerHTML = "";
         $('#finalModal').modal('show');
@@ -64,12 +64,12 @@ const getNextQuestion = () => {
     }
     counterQuestion++;
     if (counterQuestion <= 10) {
-        progressBar.innerText = ${counterQuestion}/${MAX_QUESTIONS};
+        progressBar.innerText = `${counterQuestion}/${MAX_QUESTIONS}`;
     }
 
     const indexQuestion = Math.floor(Math.random() * availableQuestions.length); //to get random number depending on number questions available
     displayedQuestion = availableQuestions[indexQuestion]; // displaying random order question
-    question.innerText = ${counterQuestion}. ${decodeURIComponent(displayedQuestion.question)}; //displaying question by calling question property
+    question.innerText = `${counterQuestion}. ${decodeURIComponent(displayedQuestion.question)}`; //displaying question by calling question property
 
     const possibleAnswers = displayedQuestion.possible_answers;
     possibleAnswers.forEach((answer, index) => {
@@ -90,7 +90,7 @@ const getNextQuestion = () => {
     });
 
     //sync counter Question with progress bar
-    progressBar.style.width = ${(counterQuestion / MAX_QUESTIONS) * 100}%;
+    progressBar.style.width = `${(counterQuestion / MAX_QUESTIONS) * 100}%`;
 
     availableQuestions.splice(indexQuestion, 1); //to remove old question and make space for new question
     acceptAnswer = true;
@@ -131,6 +131,9 @@ const selectingChoice = () => {
                 answers.innerHTML = "";
                 getNextQuestion();
             }, 600);
-        });
-    });
+        });
+    });
 };
+
+// Calling the startGame function to initiate the game
+startGame();
