@@ -1,18 +1,14 @@
-// Fetching questions from API based on selected category and difficulty
 const startButton = document.querySelector("#start");
 
 startButton.addEventListener("click", () => {
-    // Get selected category and difficulty
     const categoryId = document.querySelector("#categories").value;
     const difficultyLevel = document.querySelector("#difficulty").value;
     
     if (!categoryId || !difficultyLevel) {
-        // Show a message or modal indicating that the user needs to select both category and difficulty
         console.error("Please select both category and difficulty level.");
         return;
     }
     
-    // Fetch questions based on selected category and difficulty
     fetchingData(categoryId, difficultyLevel);
 });
 
@@ -27,10 +23,19 @@ const fetchingData = async (categoryId, difficultyLevel) => {
 
         const data = await response.json();
         questions = data.results.map((importedQuestion) => {
-            // Format questions...
+            const formattedQuestion = {
+                question: importedQuestion.question,
+                possible_answers: [
+                    importedQuestion.correct_answer,
+                    ...importedQuestion.incorrect_answers,
+                ],
+                correct_answer: importedQuestion.correct_answer,
+            };
+
+            return formattedQuestion;
         });
 
-        startGame(); // Assuming startGame() function is available globally
+        startGame();
     } catch (error) {
         console.error(error);
     }
