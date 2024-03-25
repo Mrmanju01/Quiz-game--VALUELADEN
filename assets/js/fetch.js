@@ -1,11 +1,8 @@
 const fetchingData = async () => {
     const url = `https://opentdb.com/api.php?amount=10&category=${categoryId}&difficulty=${difficultyLevel}&encode=url3986`;
 
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error('Network response was not ok.');
-        }
+    const response = await fetch(url);
+    if (response) {
         const data = await response.json();
         questions = data.results.map((importedQuestion) => {
             const formattedQuestion = {
@@ -31,11 +28,8 @@ const fetchingData = async () => {
             return formattedQuestion;
         });
         startGame();
-    } catch (error) {
-        console.error('Error fetching data:', error.message);
     }
 };
-
 const start = document.querySelector("#start");
 
 start.addEventListener("click", fetchingData);
