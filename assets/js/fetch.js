@@ -1,8 +1,8 @@
 const fetchingData = async () => {
-    const url = https://opentdb.com/api.php?amount=10&category=${categoryId}&difficulty=${difficultyLevel}&encode=url3986;
+    const url = `https://opentdb.com/api.php?amount=10&category=${categoryId}&difficulty=${difficultyLevel}&encode=url3986`;
 
     const response = await fetch(url);
-    if (response) {
+    if (response.ok) {
         const data = await response.json();
         questions = data.results.map((importedQuestion) => {
             const formattedQuestion = {
@@ -27,9 +27,12 @@ const fetchingData = async () => {
             });
             return formattedQuestion;
         });
-        startGame();
+        startGame(); // Assuming startGame() function is available globally
+    } else {
+        console.error("Failed to fetch data from API");
     }
 };
+
 const start = document.querySelector("#start");
 
-start.addEventListener("click", fetchingData);
+start.addEventListener("click", fetchingData);
